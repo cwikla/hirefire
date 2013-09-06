@@ -6,7 +6,7 @@ module HireFire
     ##
     # @return [String] the current version of the HireFire gem
     def self.current
-      '0.1.9'
+      '0.1.10'
     end
 
   end

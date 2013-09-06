@@ -16,9 +16,9 @@ module HireFire
       end
 
       def get_worker_count(app_name)
-        data = @@ps_cache(app_name)
+        data = @@ps_cache[app_name]
 
-        return data[:worker_count] if !too_old?(data[:ts])
+        return data[:worker_count] if data && !too_old?(data[:ts])
 
         worker_count = client.get_ps(app_name).body.select {|p| p['process'] =~ /worker.[0-9]+/}.length
         @@ps_cache[app_name] = { :worker_count => worker_count, :ts => Time.now }
