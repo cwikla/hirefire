@@ -5,7 +5,7 @@ require 'heroku-api'
 module HireFire
   module Environment
     class Heroku < Base
-      TOO_OLD = ENV['HIREFIRE_TOO_OLD'] ? ENV['HIREFIRE_TOO_OLD'].to_i || 20
+      TOO_OLD = ENV['HIREFIRE_TOO_OLD'] ? ENV['HIREFIRE_TOO_OLD'].to_i : 20
 
       @@ps_cache = {}
 
