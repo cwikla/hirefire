@@ -15,6 +15,5 @@ group :test do
 end
 
 source 'http://pyr:akbash42@gems.cwikla.com/' do
-  gem 'hirefire'
-  gem 'pyr_gem', '~> 3.0.0'
+  gem 'pyr_gem', '>= 4.0.0'
 end
